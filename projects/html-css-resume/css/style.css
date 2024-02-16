@@ -1,0 +1,21 @@
+.headingsFont {
+        font-family: "Protest Guerrilla", sans-serif;  
+        color: #eb7134;
+}
+
+#headerFont {
+    font-family: "Protest Riot", sans-serif;
+    color: #3483eb ;
+}
+
+body{
+    background-color: #eb34b7;
+}
+
+#name {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 7em;
+    color: #34d9eb;
+    text-align: center;
+    padding: .1em;
+}
