@@ -1,0 +1,27 @@
+header {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif}
+body{
+    background-color:#B4B1B0 ;
+}
+#swopeName{
+   text-align: center; 
+   font-family: "Roboto Slab", serif ;
+}
+
+#image {
+    display: block;
+    margin: auto;
+}
+
+.headerFont {
+    font-family:"Roboto Slab", serif  ;
+    color: #731500;
+}
+
+p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+footer{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
