@@ -1,0 +1,30 @@
+header{
+    background-color: blanchedalmond;
+    text-align: center;
+    font-family: "Roboto Slab";
+}
+#darkBack{
+    background-color: #666060;
+    font-family: "Roboto Slab";
+    font-size: large;
+    color: #ebdddd;
+}
+#weBelieve{
+    color:#994242 ;
+    background-color:#4a2424 ;
+    font-family: "Josefin Sans";
+    font-size: 25px;
+}
+footer{
+    background-color: #4f1d39 ;
+    color:#e6dcdc ;
+    font-family: "Roboto Slab";
+    text-align: center;
+
+}
+#sandwich{
+    background-color:#D2B48C ;
+    text-align: center;
+    font-family: "Josefin Sans";
+    font-size: 20px;
+}
