@@ -1,0 +1,21 @@
+Footer {
+    background-color: grey;
+    color: white;
+    font-family: "Noticia Text";
+}
+main{
+    background-color: #fdfbfb;
+    font-family: "Noticia Text";
+}
+h1{
+    align-items: center;
+}
+
+a:link {
+    color: red; }
+
+#intro{
+    background-color:#F0DFBC ;
+    padding-top: 5%;
+    padding-bottom: 5%
+}
