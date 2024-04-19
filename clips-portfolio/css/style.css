@@ -19,3 +19,8 @@ a:link {
     padding-top: 5%;
     padding-bottom: 5%
 }
+
+.orgName{
+    font-style: oblique;
+    font-weight: bolder;
+}
