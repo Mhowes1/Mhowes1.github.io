@@ -1,0 +1,113 @@
+---
+title: "How Maryland Scores: Aces, blocks, kills and errors by the numbers"
+author: "Michael Howes"
+date: '2025-10-20'
+image: "image.png"
+format: 
+  html:
+    code-fold: true
+---
+
+I first had to load the tidyverse and waffle libraries so R could read the data, summarize it and create the waffle charts.
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+library(waffle)
+```
+
+
+```{r}
+match_data <- read_csv("ncaa_womens_volleyball_matchstats_2025.csv")
+```
+I next loaded the volleyball match data, filtered it for Maryland, calculated the team’s total stats and stored those totals in a simple named vector called md.
+
+```{r}
+maryland_data <- match_data |>
+  filter(team == "Maryland")
+```
+
+
+```{r}
+md <- maryland_data|>
+  summarise(
+    total_kills = sum(kills),
+    total_blocks = sum(block_solos + (block_assists / 2)),
+    total_aces = sum(aces),
+    opponent_errors = sum(defensive_errors)
+  )
+
+md
+```
+```{r}
+md <- c(
+  Kills = 574,
+  Blocks = 135.5,
+  Aces = 73,
+  OpponentErrors = 298
+)
+```
+```{r}
+md
+```
+
+I created a waffle chart showing Maryland’s point breakdown, scaling the totals for display and using different colors for each category.
+
+```{r}
+waffle(md / 25,
+       rows = 10,
+       title = "Maryland's points",
+       xlab = "1 square = 1 point",
+       colors = c("red", "black", "yellow", "grey"))
+```
+
+I filtered the data for Wisconsin, calculated its total stats and saved those values in a named vector called wi.
+
+```{r}
+wisconsin_data <- match_data |>
+  filter(team == "Wisconsin")
+```
+
+```{r}
+wi_totals <- wisconsin_data |>
+  summarise(
+    total_kills = sum(kills),
+    total_blocks = sum(block_solos + (block_assists / 2)),
+    total_aces = sum(aces),
+    opponent_errors = sum(defensive_errors)
+  )
+```
+
+```{r}
+wi_totals
+```
+```{r}
+wi <- c(
+  Kills = 756,
+  Blocks = 147,
+  Aces = 75,
+  OpponentErrors = 291
+)
+```
+
+I combined Maryland’s and Wisconsin’s waffle charts side by side to compare their point distributions.
+
+```{r}
+iron(
+  waffle(md / 25,
+         rows = 10,
+         title = "Maryland's points",
+         xlab = "1 square = 1 point",
+         colors = c("red", "black", "yellow", "grey")),
+  waffle(wi / 25,
+         rows = 10,
+         title = "Wisconsin's points",
+         xlab = "1 square = 1 point",
+         colors = c("red", "black", "gray", "darkred"))
+)
+```
+
+Maryland’s point distribution shows a more balanced mix across categories, with kills making up the largest share but a notable contribution from opponent errors as well. Wisconsin relies more heavily on kills and blocks, indicating a stronger offensive presence at the net. Maryland earns a greater portion of its points from serving and opponent mistakes, while Wisconsin’s totals suggest it creates more of its own scoring opportunities through attack efficiency and front-row play.
+
